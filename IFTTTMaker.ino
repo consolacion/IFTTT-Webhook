@@ -45,7 +45,7 @@ char MakerIFTTT_Event[] = "garage_door";
 // In this simple example the values come from:
 //    reading a PIN                    (reported as value1)
 //    reporting uptime in milliseconds (reported as value2)
-//    the string "hello, world!"       (reported as value3)
+//    the string "via #FrontDoor"      (reported as value3)
 //
 //
 #define READ_THIS_PIN       3      // will be reported as "value1"
