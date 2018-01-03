@@ -49,7 +49,7 @@ char MakerIFTTT_Event[] = "garage_door";
 //
 //
 #define READ_THIS_PIN       3      // will be reported as "value1"
-
+byte doorPin=4;
 // helper functions for constructing the POST data
 // append a string or int to a buffer, return the resulting end of string
 
@@ -129,6 +129,7 @@ void setup() {
 
     // the input pin for this example
     pinMode(READ_THIS_PIN, INPUT_PULLUP);
+    pinMode(doorPin,INPUT_PULLUP);
 }
 
 // how often to read the pins and update IFTTT
@@ -139,10 +140,12 @@ void loop() {
 
     // DHCP lease check/renewal (library only sends request if expired)
     Ethernet.maintain();
-
+    
+if (digitalRead(doorPin)==HIGH) {
     // read the pins, send to IFTTT/Maker
     update_event();
-
     // only "this often"
     delay(LOOP_DELAY_MSEC);
+    }
+    
 }
