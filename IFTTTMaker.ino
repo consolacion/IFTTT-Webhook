@@ -45,7 +45,7 @@ char MakerIFTTT_Event[] = "garage_door";
 // In this simple example the values come from:
 //    reading a PIN                    (reported as value1)
 //    reporting uptime in milliseconds (reported as value2)
-//    the string "via #FrontDoor"      (reported as value3)
+//    the string "via #GarageDoor"     (reported as value3)
 //
 //
 #define READ_THIS_PIN       3      // will be reported as "value1"
@@ -108,7 +108,7 @@ void update_event() {
     p = append_str(p, "\",\"value2\":\"");
     p = append_ul(p, millis()/1000);
     p = append_str(p, "\",\"value3\":\"");
-    p = append_str(p, "via #FrontDoor");
+    p = append_str(p, "via #GarageDoor");
     p = append_str(p, "\"}");
 
     // go back and fill in the JSON length
