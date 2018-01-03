@@ -108,7 +108,7 @@ void update_event() {
     p = append_str(p, "\",\"value2\":\"");
     p = append_ul(p, millis()/1000);
     p = append_str(p, "\",\"value3\":\"");
-    p = append_str(p, "via #myTwitter");
+    p = append_str(p, "via #FrontDoor");
     p = append_str(p, "\"}");
 
     // go back and fill in the JSON length
